@@ -1,12 +1,12 @@
-class Estudante {
-  constructor(nome, idade, turma) {
-    if (!nome || !idade || !turma) {
+class Animal {
+  constructor(nome, idade, especie) {
+    if (!nome || !idade || !especie) {
       throw new Error("Preencha todos os campos obrigatórios.");
     }
 
     this.nome = nome;
     this.idade = idade;
-    this.turma = turma;
+    this.especie = especie;
   }
 
   mostrarAtributos() {
@@ -17,22 +17,22 @@ class Estudante {
     return {
       nome: this.nome,
       idade: this.idade,
-      turma: this.turma
+      especie: this.especie
     };
   }
 }
 
 try {
-  const estudante = new Estudante("Lohana Maria", 15, "3A");
-
-  const atributos = estudante.mostrarAtributos();
+  const meuAnimal = new Animal("Borboleta", 1, "Tumulus hottentotta");
+  const atributos = meuAnimal.mostrarAtributos();
 
   console.log(atributos.nome);
   console.log(atributos.idade);
-  console.log(atributos.turma);
-} catch (error) {
+  console.log(atributos.especie);
+} catch (error) {i
   console.error(error.name);
   console.error(error.message);
   console.error(error.stack);
 }
+
 

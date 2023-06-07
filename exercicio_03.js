@@ -1,7 +1,7 @@
 class NerdIF {
   constructor(estudante, cosplay, nota_cosplay) {
     if (!estudante || !cosplay || !nota_cosplay) {
-      throw new Error("Os atributos estudante, cosplay e nota_cosplay são obrigatórios.");
+      throw new Error("Preencha todos os campos obrigatórios.");
     }
 
     this.estudante = estudante;
@@ -23,13 +23,15 @@ class NerdIF {
 }
 
 try {
-  const aluno = new NerdIF("João", "Homem-Aranha", 9.5);
+  const aluno = new NerdIF("", "Garnet", 9.5);
   const atributos = aluno.retornarAtributos();
 
   console.log(atributos.estudante);
   console.log(atributos.cosplay);
   console.log(atributos.nota_cosplay);
 } catch (error) {
+   console.error(error.name);
   console.error(error.message);
+   console.error(error.stack);
 }
 
